@@ -24,6 +24,7 @@
 FROM alpine AS builder
 
 ARG VERSION=6.15.5
+LABEL rocksdb-version="${VERSION}"
 
 RUN apk update && apk add --no-cache \
     # Build Dependencies \
