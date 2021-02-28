@@ -64,7 +64,8 @@ RUN make static_lib && \
 # Build shared library
 RUN make clean && \
     make shared_lib && \
-    make install-shared
+    make install-shared && \
+    strip --strip-unneeded /usr/local/lib/librocksdb.so*
 
 # Install license info
 RUN install -Dm644 COPYING /usr/local/share/licenses/rocksdb/COPYING && \
